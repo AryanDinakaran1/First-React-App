@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import User from "./User.js";
 
 function App() {
   return (
     <div className="App">
-      <p>Hello, World!</p>
+      <h1>Users</h1>
 
-      <Info></Info>
+      <AddUser></AddUser>
+
+      <User></User>
     </div>
   );
 }
 
-function Info() {
-
-  const title = "We are cool!"
+function AddUser() {
   return (
     <div>
-      <h1>Inventory System</h1>
-      <p>{ title }</p>
+      <input type="text" name="username" placeholder="Username" />
+      <input type="text" name="firstName" placeholder="First Name" />
+      <input type="text" name="lastName" placeholder="Last Name" />
+      <input type="number" name="age" placeholder="Age" />
+      <input type="submit" />
     </div>
-  )
+  );
 }
 
 export default App;
