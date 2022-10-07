@@ -1,32 +1,45 @@
 import React from 'react';
 
-class User extends React.Component {
-    render() {
-        const firstName = "Aryan";
-        const lastName = "Dinakaran";
-        const username = "Aryandinakaran1";
-        const age = 16;
-    
-        if (username == "Aryandinakaran1")
-        {
-            return (
-                <div>
-                <h3>{ username }</h3>
-                <p>First Name: { firstName }</p>
-                <p>Last Name: { lastName }</p>
-                <p>Age: { age }</p>
-                </div>
-            )
-            }
-            else
-            {
-                return (
-                    <div>
-                        <h1>Nah!</h1>
-                    </div>
-                )
-            }
-        }
+function User(props) {
+
+    if (props.username === "Aryandinakaran1")
+    {
+        return (
+            <div>
+            <h3>{ props.username }</h3>
+            <p>First Name: { props.firstName }</p>
+            <p>Last Name: { props.lastName }</p>
+            <p>Age: { props.age }</p>
+            </div>
+        )
+    }
+    else if (props.username === "Elonism")
+    {
+        return (
+            <div>
+            <h3>{ props.username  }</h3>
+            <p>First Name: { props.firstName }</p>
+            <p>Last Name: { props.lastName }</p>
+            <p>Age: { props.age }</p>
+            </div>
+        )
+    }
+    else
+    {
+        return (
+            <div>
+                <h1>Nah!</h1>
+            </div>
+        )
+    }
+}
+
+// Elon Musk
+User.defaultProps = {
+    firstName: "Elon",
+    lastName: "Musk",
+    username: "Elonism",
+    age: 50,
 }
 
 export default User;
