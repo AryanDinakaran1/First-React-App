@@ -1,23 +1,63 @@
 import "./App.css";
 import User from "./User.js";
 import NewUser from "./NewUser.js";
+import { useState } from "react";
 import { PropTypes } from "prop-types";
 
 function App() {
   return (
     <div className="App">
-      <h1>Users</h1>
 
-      <AddUser></AddUser>
-      <User firstName="Aryan" lastName="Dinakaran" username="Aryandinakaran1" age={16}></User>
-      <User></User>
-      <NewUser name="Aryan"></NewUser>
+
       <NewUser></NewUser>
 
     </div>
   );
 }
 
+
+function ButtonState() {
+
+  const [title, setTitle] = useState("");
+  const [count, setCount] = useState(0);
+
+
+  const updateTitle = () => {
+    setTitle("We now have a title");
+  }
+
+  const updateCounter = () => {
+    setCount(count+1);
+  }
+
+  return (
+    <div>
+
+      <BigHeading title={title} count={count}></BigHeading>
+
+      <button onClick={updateTitle}>Update Title</button>
+      <button onClick={updateCounter}>Update Counter</button>
+
+    </div>
+  );
+}
+
+function BigHeading(props) {
+  return(
+    <div>
+      <h1>Title: {props.title}</h1>
+      <h1>Count: {props.count}</h1>
+    </div>
+  );
+}
+
+
+export default App;
+
+
+
+
+/*
 function AddUser(props) {
   return (
     <div>
@@ -39,4 +79,4 @@ AddUser.propTypes = {
   age: PropTypes.number,
 }
 
-export default App;
+*/
